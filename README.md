@@ -50,6 +50,8 @@ python3 pdf-toolbox.py
 
 ```
 
+## <a href="https://github.com/isuruwa/PDF-TOOLBOX/archive/refs/tags/PassList.zip">Download 10-million-password-list-top-1000000.txt</a>
+
 
 # CREDITS - <a href="https://pypi.org/project/py2pdf/">Py2pdf</a> ,<a href="https://realpython.com/pdf-python/"> Realpython</a>
 
