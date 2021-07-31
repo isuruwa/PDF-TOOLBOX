@@ -13,7 +13,7 @@
 # PDF-TOOLBOX is a python based Multi Purpose PDF Editing  Tool .
 
 ---
-## Main Features  :
+## Main Features  : <img src="https://img.icons8.com/nolan/64/pdf.png"/>
 - [X] Pdf To Text
 - [X] Text To Pdf
 - [X] Pdf Merger
@@ -26,8 +26,29 @@
 - [X] Pdf Info
 ---
 
-## I Had Seen In Most PDF to Text Tools are Not Working Properly because They didn't ditect every pdf correctly . But , the Pdf to Text options Available In Here is Really Working . 
-## Included Lightweight High Fast PDF Cracker ( normally about 170/s ) 
+## I Had Seen In Most PDF to Text Tools are Not Working Properly because They didn't ditect every pdf correctly . But , the Pdf to Text options Available In Here is Really Working . <img src="https://img.icons8.com/color-glass/48/000000/double-tick.png"/>
+## Included Lightweight High Fast PDF Cracker ( normally about 170/s ) <img src="https://img.icons8.com/color-glass/48/000000/double-tick.png"/>
 ## Hope Adding More addictive Features In Future .
 
-# CREDITS - <a href="https://pypi.org/project/py2pdf/">Py2pdf</a><a href="https://realpython.com/pdf-python/">Realpython</a>
+![carbon(3)](https://user-images.githubusercontent.com/72663288/127749314-0acce68a-15d7-48de-a9e7-4cfc7b11604f.png)
+
+## Tested On : <img src="https://img.icons8.com/color/48/000000/pdf.png"/>
+
+* Windows
+* Linux Versions
+* Termux
+
+## INSTALLTION : <img src="https://img.icons8.com/color/48/000000/pdf.png"/>
+
+``` 
+* apt update
+* apt upgrade
+* git clone https://github.com/isuruwa/PDF-TOOLBOX
+* cd PDF-TOOLBOX
+* pip install -r requirements.txt
+* python pdf-toolbox.sh
+
+```
+
+
+# CREDITS - <a href="https://pypi.org/project/py2pdf/">Py2pdf</a> ,<a href="https://realpython.com/pdf-python/"> Realpython</a>
