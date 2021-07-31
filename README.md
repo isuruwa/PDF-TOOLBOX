@@ -52,3 +52,12 @@ python3 pdf-toolbox.py
 
 
 # CREDITS - <a href="https://pypi.org/project/py2pdf/">Py2pdf</a> ,<a href="https://realpython.com/pdf-python/"> Realpython</a>
+
+# SCREENSHOTS : 
+
+![menu](https://user-images.githubusercontent.com/72663288/127749986-3876ec4d-3fab-46d5-8bbb-47d93591df11.PNG)
+
+![pdf2txt](https://user-images.githubusercontent.com/72663288/127749988-e118bb28-c35f-42f3-8218-b217a4c2ba55.PNG)
+
+![pdfcrack](https://user-images.githubusercontent.com/72663288/127749989-c4366644-d1f8-4b3b-90c5-9a969f7c4c8c.PNG)
+
