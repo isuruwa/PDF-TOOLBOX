@@ -46,7 +46,7 @@
 * git clone https://github.com/isuruwa/PDF-TOOLBOX
 * cd PDF-TOOLBOX
 * pip install -r requirements.txt
-* python pdf-toolbox.sh
+* python pdf-toolbox.py
 
 ```
 
