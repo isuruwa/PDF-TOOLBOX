@@ -2,7 +2,7 @@ from art import *
 import time
 from os import system, name
 
-######################### pdf info #########################################
+######################### pdf info #########################
 
 def pdfinfo():# extract_doc_info.py
     help
@@ -34,7 +34,7 @@ def pdfinfo():# extract_doc_info.py
         extract_information()
 
 
-##################### pdf merge ##############################################
+######################### pdf merge #########################
 
 def pdfmerger():
     
@@ -61,9 +61,8 @@ def pdfmerger():
         paths = [x,y]
         merge_pdfs(paths, output=z)
 
-################# pdf split #############################################
+######################### pdf split #########################
 
-# importing the required modules
 def pdfspliter():
     import PyPDF2
 
@@ -124,7 +123,7 @@ def pdfspliter():
         # calling the main function
         main()
 
-############### pdf raotate ##################################
+######################### pdf raotate #########################
 
 def pdfrotater():
     import PyPDF2
@@ -182,9 +181,7 @@ def pdfrotater():
         # calling the main function
         main()
 
-#################### pdf watermark ##############################
-
-# pdf_watermarker.py
+######################### pdf watermark #########################
 
 def pdfwatermarker():
     from PyPDF2 import PdfFileWriter, PdfFileReader
@@ -211,9 +208,7 @@ def pdfwatermarker():
             output=input("\033[35m  [\033[33m*\033[35m]\033[35m Enter Output Pdf Path    : "),
             watermark=input("\033[35m  [\033[33m*\033[35m]\033[36m Enter Watermark Pdf Path : "))
 
-################### pdf encrypt ######################################
-
-# pdf_encrypt.py
+######################### pdf encrypt #########################
 
 def pdfencrypter():
     from PyPDF2 import PdfFileWriter, PdfFileReader
@@ -236,7 +231,7 @@ def pdfencrypter():
                     output_pdf=input("\033[35m  [\033[33m*\033[35m]\033[31m Enter Output Pdf Path : "),
                     password=input("\033[35m  [\033[33m*\033[35m]\033[36m Enter Password : "))
 
-################ pdf decrypt ###########################################
+######################### pdf decrypt #########################
 
 def pdfdecrypter():
     import pikepdf
@@ -260,10 +255,9 @@ def pdfdecrypter():
             # wrong password, just continue in the loop
             continue
 
-############# pdf to audio ###################
+######################### pdf to audio #########################
 
 def pdf2audio():
-    # importing the modules
     import PyPDF2
     import pyttsx3
 
@@ -288,12 +282,9 @@ def pdf2audio():
     speak.runAndWait()
 
 
-##################### text to pdf ################################
+######################### text to pdf #########################
 
 def txt2pdf():
-    # Python program to convert
-    # text file to pdf file
-
     from fpdf import FPDF
 
     # save FPDF() class into
@@ -323,7 +314,7 @@ def txt2pdf():
 
 
 
-############### pdf to text ##########################
+######################### pdf to text #########################
 
 def pdf2txt():
     #pip install pdfminer.six
@@ -369,6 +360,8 @@ def pdf2txt():
     if __name__ == "__main__":
         print(convert_pdf_to_txt(x)) 
 
+######################### screen clear #########################
+
 def clear():
     if name == 'nt':
         _ = system('cls')
@@ -380,17 +373,24 @@ def back():
   input("\033[37m  [\033[31m+\033[37m] Press Enter To Go Back")
   menu()
 
+######################### banners #########################
+
 def banner(topic):
   clear()
   print("\033[1;32m")
   tprint(topic)
 
+######################### author - devil master #########################
+
 def author():
   print("                   \033[37m[\033[31m+\033[37m] DEVELOPED BY DEVIL MASTER \033[37m[\033[31m+\033[37m]")
   print("                   \033[37m[\033[31m+\033[37m]     github.com/isuruwa    \033[37m[\033[31m+\033[37m]\n\n")
 
+
+######################### Menu #########################
+
 def menu():
-  banner("""  PDF-TOOLBOX\n""")
+  banner("""  PDF-TOOLKIT\n""")
   author()
   print("\033[35m  [\033[33m*\033[35m]\033[31m 1.Pdf To Text")
   print("\033[35m  [\033[33m*\033[35m]\033[1;32m 2.Text To Pdf")
