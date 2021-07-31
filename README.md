@@ -41,12 +41,12 @@
 ## INSTALLTION : <img src="https://img.icons8.com/color/48/000000/pdf.png"/>
 
 ``` 
-* apt update
-* apt upgrade
-* git clone https://github.com/isuruwa/PDF-TOOLBOX
-* cd PDF-TOOLBOX
-* pip install -r requirements.txt
-* python pdf-toolbox.py
+apt update
+apt upgrade
+git clone https://github.com/isuruwa/PDF-TOOLBOX
+cd PDF-TOOLBOX
+pip install -r requirements.txt
+python pdf-toolbox.py
 
 ```
 
