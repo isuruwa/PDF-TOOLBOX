@@ -390,7 +390,7 @@ def author():
 ######################### Menu #########################
 
 def menu():
-  banner("""  PDF-TOOLKIT\n""")
+  banner("""  PDF-TOOLBOX\n""")
   author()
   print("\033[35m  [\033[33m*\033[35m]\033[31m 1.Pdf To Text")
   print("\033[35m  [\033[33m*\033[35m]\033[1;32m 2.Text To Pdf")
