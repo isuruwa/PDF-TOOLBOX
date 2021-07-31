@@ -1,0 +1,7 @@
+art
+PyPDF2
+pikepdf
+tqdm
+pyttsx3
+fpdf
+pdfminer.six
