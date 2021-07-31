@@ -45,8 +45,8 @@ apt update
 apt upgrade
 git clone https://github.com/isuruwa/PDF-TOOLBOX
 cd PDF-TOOLBOX
-pip install -r requirements.txt
-python pdf-toolbox.py
+pip3 install -r requirements.txt
+python3 pdf-toolbox.py
 
 ```
 
