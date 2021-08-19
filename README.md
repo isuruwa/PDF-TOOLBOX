@@ -65,6 +65,7 @@ python3 pdf-toolbox.py
 ---
 ### ❤️Supporters❤️ 
 [![Stars @isuruwa/PDF-TOOLBOX](https://reporoster.com/stars/dark/isuruwa/PDF-TOOLBOX)](https://github.com/isuruwa/PDF-TOOLBOX/stargazers)
+
 [![Forks @isuruwa/PDF-TOOLBOX](https://reporoster.com/forks/dark/isuruwa/PDF-TOOLBOX)](https://github.com/isuruwa/PDF-TOOLBOX/network/members)
 ---
 
