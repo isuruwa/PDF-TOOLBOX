@@ -62,3 +62,4 @@ python3 pdf-toolbox.py
 
 ![pdfcrack](https://user-images.githubusercontent.com/72663288/127749989-c4366644-d1f8-4b3b-90c5-9a969f7c4c8c.PNG)
 
+[![Stargazers repo roster for @isuruwa/PDF-TOOLBOX](https://reporoster.com/stars/dark/isuruwa/PDF-TOOLBOX)](https://github.com/isuruwa/PDF-TOOLBOX/stargazers)
