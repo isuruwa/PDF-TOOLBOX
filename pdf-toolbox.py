@@ -6,7 +6,7 @@ from os import system, name
 if sys.version_info[0] < 3:
 	versao = python_version()
 	print("\n\033[32m You are using python in the version\033[1;m \033[1m\033[31m%s\033[1;m \033[32mand it is lower than python3 onwards.\033[1;m" %(versao))
-	print("\033[32m Please run HashCode with a higher version than python2\033[1;m\n")
+	print("\033[32m Please run PDF-TOOLBOX with a higher version than python2\033[1;m\n")
 	exit(1)
 
 	
