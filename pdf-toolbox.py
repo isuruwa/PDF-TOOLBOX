@@ -1,6 +1,7 @@
 from art import *
 import time
 from os import system, name
+from platform import python_version
 
 
 if sys.version_info[0] < 3:
