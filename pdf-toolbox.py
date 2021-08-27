@@ -2,6 +2,14 @@ from art import *
 import time
 from os import system, name
 
+
+if sys.version_info[0] < 3:
+	versao = python_version()
+	print("\n\033[32m You are using python in the version\033[1;m \033[1m\033[31m%s\033[1;m \033[32mand it is lower than python3 onwards.\033[1;m" %(versao))
+	print("\033[32m Please run HashCode with a higher version than python2\033[1;m\n")
+	exit(1)
+
+	
 ######################### pdf info #########################
 
 def pdfinfo():# extract_doc_info.py
@@ -405,7 +413,6 @@ def menu():
   print("\033[35m  [\033[33m*\033[35m]\033[31m 11.Exit\n")
   choice=input("\033[37m  [\033[31m+\033[37m] Enter Choice : ")
   if choice == "1" or choice == "01":
-
     banner("""           PDF 2 TXT""")
     author()
     pdf2txt()
