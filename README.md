@@ -26,7 +26,7 @@
 - [X] Pdf Info
 ---
 
-## I Had Seen In Most PDF to Text Tools are Not Working Properly because They didn't ditect every pdf correctly . But , the Pdf to Text options Available In Here is Really Working . <img src="https://img.icons8.com/color-glass/48/000000/double-tick.png"/>
+## I Had Seen In Most PDF to Text Tools are Not Working Properly because They didn't ditect every pdf correctly . But , the Pdf to Text options Available In Here is Really Working . ( WIN with Python 3.8 ) <img src="https://img.icons8.com/color-glass/48/000000/double-tick.png"/>
 ## Included Lightweight High Fast PDF Cracker ( normally about 300/s ) <img src="https://img.icons8.com/color-glass/48/000000/double-tick.png"/>
 ## Hope Adding More addictive Features In Future .
 
