@@ -5,6 +5,8 @@
 from art import *
 import time
 from os import system, name
+from PyPDF2 import *
+import pikepdf tqdm pyttsx3
 
 
 ######################### pdf info #########################
