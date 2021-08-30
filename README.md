@@ -37,6 +37,8 @@
 * Windows
 * Linux Versions
 
+# EXE VERSION - <a href="https://github.com/isuruwa/PDF-TOOLBOX/releases/download/PDFTOOLKIT/PDFTOOLKIT.exe">Download</a>
+
 ## INSTALLTION : <img src="https://img.icons8.com/color/48/000000/pdf.png"/>
 
 ``` 
