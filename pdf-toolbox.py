@@ -7,6 +7,7 @@ import time
 from os import system, name
 from PyPDF2 import *
 import pikepdf, tqdm, pyttsx3
+import os
 
 ######################### pdf info #########################
 def pdfinfo():# extract_doc_info.py
