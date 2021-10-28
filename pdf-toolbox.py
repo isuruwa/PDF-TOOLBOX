@@ -288,7 +288,7 @@ def txt2pdf():
     pdf = FPDF()
 
 
-    myfile = input("\033[35m  [\033[33m*\033[35m]\033[1;32m Enter Input Pdf Path  : ")
+    myfile = input("\033[35m  [\033[33m*\033[35m]\033[1;32m Enter Input txt Path  : ")
     outpdf=input("\033[35m  [\033[33m*\033[35m]\033[36m Enter Output Pdf Path : ")
 
     # Add a page
