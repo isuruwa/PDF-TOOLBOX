@@ -8,9 +8,7 @@ from os import system, name
 from PyPDF2 import *
 import pikepdf, tqdm, pyttsx3
 
-
 ######################### pdf info #########################
-
 def pdfinfo():# extract_doc_info.py
     help
     from PyPDF2 import PdfFileReader
@@ -39,10 +37,8 @@ def pdfinfo():# extract_doc_info.py
 
     if __name__ == '__main__':
         extract_information()
-
-
+	
 ######################### pdf merge #########################
-
 def pdfmerger():
     
     from PyPDF2 import PdfFileReader, PdfFileWriter
@@ -69,7 +65,6 @@ def pdfmerger():
         merge_pdfs(paths, output=z)
 
 ######################### pdf split #########################
-
 def pdfspliter():
     import PyPDF2
 
@@ -131,7 +126,6 @@ def pdfspliter():
         main()
 
 ######################### pdf raotate #########################
-
 def pdfrotater():
     import PyPDF2
     import sys
@@ -189,7 +183,6 @@ def pdfrotater():
         main()
 
 ######################### pdf watermark #########################
-
 def pdfwatermarker():
     from PyPDF2 import PdfFileWriter, PdfFileReader
 
@@ -216,7 +209,6 @@ def pdfwatermarker():
             watermark=input("\033[35m  [\033[33m*\033[35m]\033[36m Enter Watermark Pdf Path : "))
 
 ######################### pdf encrypt #########################
-
 def pdfencrypter():
     from PyPDF2 import PdfFileWriter, PdfFileReader
 
@@ -239,7 +231,6 @@ def pdfencrypter():
                     password=input("\033[35m  [\033[33m*\033[35m]\033[36m Enter Password : "))
 
 ######################### pdf decrypt #########################
-
 def pdfdecrypter():
     import pikepdf
     from tqdm import tqdm
@@ -263,7 +254,6 @@ def pdfdecrypter():
             continue
 
 ######################### pdf to audio #########################
-
 def pdf2audio():
     import PyPDF2
     import pyttsx3
@@ -288,9 +278,7 @@ def pdf2audio():
     speak.say(text)
     speak.runAndWait()
 
-
 ######################### text to pdf #########################
-
 def txt2pdf():
     from fpdf import FPDF
 
@@ -319,10 +307,7 @@ def txt2pdf():
     # save the pdf with name .pdf
     pdf.output(outpdf)
 
-
-
 ######################### pdf to text #########################
-
 def pdf2txt():
     #pip install pdfminer.six
     import io
@@ -367,8 +352,15 @@ def pdf2txt():
     if __name__ == "__main__":
         print(convert_pdf_to_txt(x)) 
 
-######################### begin #########################
+######################### IMG2PDF ####################
+def img2pdf():
+  print("[+] leave a space among image names , if you are adding multiple images\n")
+  img = str(input("\033[35m  [\033[33m*\033[35m]\033[1;32m Enter img files : "))
+  pdf = str(input("\033[35m  [\033[33m*\033[35m]\033[36m Enter Output PDF name :"))
+  os.system("img2pdf %s -o %s" % (img, pdf))
+  print("Done !")
 
+######################### begin #########################
 def clear():
     if name == 'nt':
         _ = system('cls')
@@ -389,9 +381,7 @@ def author():
   print("                   \033[37m[\033[31m+\033[37m] DEVELOPED BY DEVIL MASTER \033[37m[\033[31m+\033[37m]")
   print("                   \033[37m[\033[31m+\033[37m]     github.com/isuruwa    \033[37m[\033[31m+\033[37m]\n\n")
 
-
 ######################### Menu #########################
-
 def menu():
   banner("""  PDF-TOOLKIT\n""")
   author()
@@ -405,7 +395,8 @@ def menu():
   print("\033[35m  [\033[33m*\033[35m]\033[31m 8.Pdf Decrypter")
   print("\033[35m  [\033[33m*\033[35m]\033[35m 9.Pdf To Audio")
   print("\033[35m  [\033[33m*\033[35m]\033[36m 10.Pdf Info")
-  print("\033[35m  [\033[33m*\033[35m]\033[31m 11.Exit\n")
+  print("\033[35m  [\033[33m*\033[35m]\033[1;32m 11.Image To Pdf")
+  print("\033[35m  [\033[33m*\033[35m]\033[31m 12.Exit\n")
   choice=input("\033[37m  [\033[31m+\033[37m] Enter Choice : ")
   if choice == "1" or choice == "01":
     banner("""           PDF 2 TXT""")
@@ -458,12 +449,15 @@ def menu():
     pdfinfo()
     back()
   elif choice == "11":
+    banner("""    IMG2PDF""")
+    author()
+    img2pdf()
+    back()
+  elif choice == "12":
     time.sleep(1)
     print("\n")
     print("\033[37m  [\033[31m+\033[37m] THANK YOY ! \033[37m [\033[31m+\033[37m]\n")
-    time.sleep(1)
     print("\033[37m  [\033[31m+\033[37m] STAY SAFE ! \033[37m [\033[31m+\033[37m]\n")
-    time.sleep(1)
     print("\033[37m  [\033[31m+\033[37m] EXPECT US !\n")
     time.sleep(1)
     quit()
@@ -474,5 +468,16 @@ def menu():
     print("\033[37m  [\033[31m+\033[37m] Wrong Choice")
     time.sleep(1)
     menu()
+    
+def program():
+    try:
+      menu()
+    except KeyboardInterrupt:
+      con = input("\n\n [c] Continue [q] Quit : ")
+      if con == "c" or con == "C" or con == "continue" or con == "Continue":
+        menu()
+      else:
+        exit()
 
-menu()
+if '__main__' == __name__:
+	program()
