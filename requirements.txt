@@ -6,3 +6,4 @@ pyttsx3
 fpdf
 pdfminer
 pdfminer.six
+img2pdf
