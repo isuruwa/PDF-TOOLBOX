@@ -12,15 +12,15 @@ import os
 ######################### pdf info #########################
 def pdfinfo():# extract_doc_info.py
     help
-    from PyPDF2 import PdfFileReader
+    from PyPDF2 import PdfReader
 
     x=input("\033[35m  [\033[33m*\033[35m]\033[1;32m Enter Input Pdf Path : ")
 
     def extract_information():
         with open(x, 'rb') as f:
-            pdf = PdfFileReader(f)
-            information = pdf.getDocumentInfo()
-            number_of_pages = pdf.getNumPages()
+            pdf = PdfReader(f)
+            information = pdf.metadata
+            number_of_pages = len(pdf.pages)
 
         txt = f"""
         Information about {x} : 
@@ -42,20 +42,20 @@ def pdfinfo():# extract_doc_info.py
 ######################### pdf merge #########################
 def pdfmerger():
     
-    from PyPDF2 import PdfFileReader, PdfFileWriter
+    from PyPDF2 import PdfReader, PdfWriter
 
     x=input("\033[35m  [\033[33m*\033[35m]\033[1;32m Enter 1st Pdf Path : ")
     y=input("\033[35m  [\033[33m*\033[35m]\033[35m Enter 2nd Pdf Path : ")
     z=input("\033[35m  [\033[33m*\033[35m]\033[36m Enter Output Pdf Path  : ")
 
     def merge_pdfs(paths, output):
-        pdf_writer = PdfFileWriter()
+        pdf_writer = PdfWriter()
 
         for path in paths:
-            pdf_reader = PdfFileReader(path)
-            for page in range(pdf_reader.getNumPages()):
+            pdf_reader = PdfReader(path)
+            for page in range(len(pdf_reader.pages)):
                 # Add each page to the writer object
-                pdf_writer.addPage(pdf_reader.getPage(page))
+                pdf_writer.add_page(pdf_reader.pages[page])
 
     # Write out the merged PDF
         with open(output, 'wb') as out:
@@ -74,7 +74,7 @@ def pdfspliter():
         pdfFileObj = open(pdf, 'rb')
      
         # creating pdf reader object
-        pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+        pdfReader = PyPDF2.PdfReader(pdfFileObj)
      
         # starting index of first slice
         start = 0
@@ -85,14 +85,14 @@ def pdfspliter():
      
         for i in range(len(splits)+1):
             # creating pdf writer object for (i+1)th split
-            pdfWriter = PyPDF2.PdfFileWriter()
+            pdfWriter = PyPDF2.PdfWriter()
          
             # output pdf file name
             outputpdf = pdf.split('.pdf')[0] + str(i) + '.pdf'
          
             # adding pages to pdf writer object
             for page in range(start,end):
-                pdfWriter.addPage(pdfReader.getPage(page))
+                pdfWriter.add_page(pdfReader.pages[page])
          
             # writing split pdf pages to pdf file
             with open(outputpdf, "wb") as f:
@@ -105,7 +105,7 @@ def pdfspliter():
                 end = splits[i+1]
             except IndexError:
                 # setting split end position for last split
-                end = pdfReader.numPages
+                end = len(pdfReader.pages)
          
         # closing the input pdf file object
         pdfFileObj.close()
@@ -137,20 +137,20 @@ def pdfrotater():
         pdfFileObj = open(origFileName, 'rb')
      
         # creating a pdf Reader object
-        pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+        pdfReader = PyPDF2.PdfReader(pdfFileObj)
  
         # creating a pdf writer object for new pdf
-        pdfWriter = PyPDF2.PdfFileWriter()
+        pdfWriter = PyPDF2.PdfWriter()
      
         # rotating each page
-        for page in range(pdfReader.numPages):
+        for page in range(len(pdfReader.pages)):
  
             # creating rotated page object
-            pageObj = pdfReader.getPage(page)
+            pageObj = pdfReader.pages[page]
             pageObj.rotateClockwise(rotation)
  
             # adding rotated page object to pdf writer
-            pdfWriter.addPage(pageObj)
+            pdfWriter.add_page(pageObj)
  
         # new pdf file object
         newFile = open(newFileName, 'wb')
@@ -185,20 +185,20 @@ def pdfrotater():
 
 ######################### pdf watermark #########################
 def pdfwatermarker():
-    from PyPDF2 import PdfFileWriter, PdfFileReader
+    from PyPDF2 import PdfWriter, PdfReader
 
     def create_watermark(input_pdf, output, watermark):
-        watermark_obj = PdfFileReader(watermark)
-        watermark_page = watermark_obj.getPage(0)
+        watermark_obj = PdfReader(watermark)
+        watermark_page = watermark_obj.pages[0]
 
-        pdf_reader = PdfFileReader(input_pdf)
-        pdf_writer = PdfFileWriter()
+        pdf_reader = PdfReader(input_pdf)
+        pdf_writer = PdfWriter()
 
         # Watermark all the pages
-        for page in range(pdf_reader.getNumPages()):
-            page = pdf_reader.getPage(page)
+        for page in range(len(pdf_reader.pages)):
+            page = pdf_reader.pages[page]
             page.mergePage(watermark_page)
-            pdf_writer.addPage(page)
+            pdf_writer.add_page(page)
 
         with open(output, 'wb') as out:
             pdf_writer.write(out)
@@ -211,16 +211,16 @@ def pdfwatermarker():
 
 ######################### pdf encrypt #########################
 def pdfencrypter():
-    from PyPDF2 import PdfFileWriter, PdfFileReader
+    from PyPDF2 import PdfWriter, PdfReader
 
     def add_encryption(input_pdf, output_pdf, password):
-        pdf_writer = PdfFileWriter()
-        pdf_reader = PdfFileReader(input_pdf)
+        pdf_writer = PdfWriter()
+        pdf_reader = PdfReader(input_pdf)
 
-        for page in range(pdf_reader.getNumPages()):
-            pdf_writer.addPage(pdf_reader.getPage(page))
+        for page in range(len(pdf_reader.pages)):
+            pdf_writer.add_page(pdf_reader.pages[page])
 
-        pdf_writer.encrypt(user_pwd=password, owner_pwd=None, 
+        pdf_writer.encrypt(user_password=password, owner_pwd=None, 
                         use_128bit=True)
 
         with open(output_pdf, 'wb') as fh:
@@ -264,12 +264,12 @@ def pdf2audio():
     # path of the PDF file
     path = open(inpdf, 'rb')
 
-    # creating a PdfFileReader object
-    pdfReader = PyPDF2.PdfFileReader(path)
+    # creating a PdfReader object
+    pdfReader = PyPDF2.PdfReader(path)
 
     # the page with which you want to start
     # this will read the page of 25th page.
-    from_page = pdfReader.getPage(24)
+    from_page = pdfReader.pages[24]
 
     # extracting the text from the PDF
     text = from_page.extractText()
