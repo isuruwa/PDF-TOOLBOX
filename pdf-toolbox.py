@@ -6,6 +6,7 @@ from art import *
 import time
 from os import system, name
 from pdf2image import convert_from_path
+from pdf2docx import Converter
 from PyPDF2 import *
 import pikepdf, tqdm, pyttsx3
 import os
@@ -384,6 +385,40 @@ def pdf2img():
   else:
       print("File does not exist")
 
+######################### PDF2docx #################### 
+def pdf2docx():
+  pdfname=input("\033[35m  [\033[33m*\033[35m]\033[1;32m Enter the name of the pdf file: ")
+  docxname=input("\033[35m  [\033[33m*\033[35m]\033[1;32m Enter the name of the output docx file: ")
+  if  not pdfname.endswith('.pdf'):
+      pdfname=pdfname+'.pdf'
+  pdf_file = pdfname
+  if  not docxname.endswith('.docx'):
+      docxname=docxname+'.docx'
+  docx_file = docxname
+  cv = Converter(pdf_file)
+  cv.convert(docx_file)
+  cv.close()
+######################### begin #########################
+def docx2pdf():
+
+
+# Converting docx present in the same folder
+# as the python file
+convert("GFG.docx")
+
+# Converting docx specifying both the input 
+# and output paths
+convert("GeeksForGeeks\GFG_1.docx", "Other_Folder\Mine.pdf")
+
+# Notice that the output filename need not be 
+# the same as the docx
+
+# Bulk Conversion
+convert("GeeksForGeeks\")
+
+
+
+
 ######################### begin #########################
 def clear():
     if name == 'nt':
@@ -421,7 +456,8 @@ def menu():
   print("\033[35m  [\033[33m*\033[35m]\033[36m 10.Pdf Info")
   print("\033[35m  [\033[33m*\033[35m]\033[1;32m 11.Image To Pdf")
   print("\033[35m  [\033[33m*\033[35m]\033[1;32m 12.Pdf To Image")
-  print("\033[35m  [\033[33m*\033[35m]\033[31m 13.Exit\n")
+  print("\033[35m  [\033[33m*\033[35m]\033[1;32m 13.Pdf To Image")
+  print("\033[35m  [\033[33m*\033[35m]\033[31m 14.Exit\n")
   choice=input("\033[37m  [\033[31m+\033[37m] Enter Choice : ")
   if choice == "1" or choice == "01":
     banner("""           PDF 2 TXT""")
@@ -483,8 +519,12 @@ def menu():
     author()
     pdf2img()
     back()
-      
   elif choice == "13":
+    banner("""    PDF2DOCX""")
+    author()
+    pdf2docx()
+    back()
+  elif choice == "14":
     time.sleep(1)
     print("\n")
     print("\033[37m  [\033[31m+\033[37m] THANK YOY ! \033[37m [\033[31m+\033[37m]\n")
