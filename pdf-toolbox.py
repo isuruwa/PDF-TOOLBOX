@@ -367,7 +367,8 @@ def img2pdf():
 ######################### PDF2IMG ####################
 def pdf2img():
   filename=input("\033[35m  [\033[33m*\033[35m]\033[1;32m Enter the name of the pdf file: ")
-  print(filename)
+  if not filename.endswith('.pdf'):
+      filename=filename+'.pdf'
   if os.path.exists(filename):
       images = convert_from_path(filename)
       if os.path.exists("PDFTOIMAGES"):
@@ -398,26 +399,6 @@ def pdf2docx():
   cv = Converter(pdf_file)
   cv.convert(docx_file)
   cv.close()
-######################### begin #########################
-def docx2pdf():
-
-
-# Converting docx present in the same folder
-# as the python file
-convert("GFG.docx")
-
-# Converting docx specifying both the input 
-# and output paths
-convert("GeeksForGeeks\GFG_1.docx", "Other_Folder\Mine.pdf")
-
-# Notice that the output filename need not be 
-# the same as the docx
-
-# Bulk Conversion
-convert("GeeksForGeeks\")
-
-
-
 
 ######################### begin #########################
 def clear():
@@ -456,7 +437,7 @@ def menu():
   print("\033[35m  [\033[33m*\033[35m]\033[36m 10.Pdf Info")
   print("\033[35m  [\033[33m*\033[35m]\033[1;32m 11.Image To Pdf")
   print("\033[35m  [\033[33m*\033[35m]\033[1;32m 12.Pdf To Image")
-  print("\033[35m  [\033[33m*\033[35m]\033[1;32m 13.Pdf To Image")
+  print("\033[35m  [\033[33m*\033[35m]\033[1;32m 13.Pdf To Docx")
   print("\033[35m  [\033[33m*\033[35m]\033[31m 14.Exit\n")
   choice=input("\033[37m  [\033[31m+\033[37m] Enter Choice : ")
   if choice == "1" or choice == "01":
