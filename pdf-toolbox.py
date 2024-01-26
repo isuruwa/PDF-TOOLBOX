@@ -365,9 +365,10 @@ def img2pdf():
 
 ######################### PDF2IMG ####################
 def pdf2img():
-  filename=input("Enter the name of the pdf file: ")
+  filename=input("\033[35m  [\033[33m*\033[35m]\033[1;32m Enter the name of the pdf file: ")
+  print(filename)
   if os.path.exists(filename):
-      images = convert_from_path('pdf.pdf')
+      images = convert_from_path(filename)
       if os.path.exists("PDFTOIMAGES"):
           pass
       else:
