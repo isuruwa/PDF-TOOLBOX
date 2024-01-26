@@ -23,6 +23,8 @@
 - [X] Pdf Encrypter
 - [X] Pdf Decrypter
 - [X] Pdf To Audio
+- [X] Pdf To Docx
+- [X] Pdf To Images
 - [X] Pdf Info
 ---
 
