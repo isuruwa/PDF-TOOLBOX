@@ -5,6 +5,8 @@
 from art import *
 import time
 from os import system, name
+from pdf2image import convert_from_path
+from pdf2docx import Converter
 from PyPDF2 import *
 import pikepdf, tqdm, pyttsx3
 import os
@@ -361,6 +363,43 @@ def img2pdf():
   os.system("img2pdf %s -o %s" % (img, pdf))
   print("Done !")
 
+
+######################### PDF2IMG ####################
+def pdf2img():
+  filename=input("\033[35m  [\033[33m*\033[35m]\033[1;32m Enter the name of the pdf file: ")
+  if not filename.endswith('.pdf'):
+      filename=filename+'.pdf'
+  if os.path.exists(filename):
+      images = convert_from_path(filename)
+      if os.path.exists("PDFTOIMAGES"):
+          pass
+      else:
+          try:
+            os.mkdir("PDFTOIMAGES")
+          except Exception as e:
+            print(e)
+
+      for i in range(len(images)):
+    
+        # Save pages as images in the pdf
+        images[i].save('PDFTOIMAGES/page'+ str(i) +'.jpg', 'JPEG')
+  else:
+      print("File does not exist")
+
+######################### PDF2docx #################### 
+def pdf2docx():
+  pdfname=input("\033[35m  [\033[33m*\033[35m]\033[1;32m Enter the name of the pdf file: ")
+  docxname=input("\033[35m  [\033[33m*\033[35m]\033[1;32m Enter the name of the output docx file: ")
+  if  not pdfname.endswith('.pdf'):
+      pdfname=pdfname+'.pdf'
+  pdf_file = pdfname
+  if  not docxname.endswith('.docx'):
+      docxname=docxname+'.docx'
+  docx_file = docxname
+  cv = Converter(pdf_file)
+  cv.convert(docx_file)
+  cv.close()
+
 ######################### begin #########################
 def clear():
     if name == 'nt':
@@ -397,7 +436,9 @@ def menu():
   print("\033[35m  [\033[33m*\033[35m]\033[35m 9.Pdf To Audio")
   print("\033[35m  [\033[33m*\033[35m]\033[36m 10.Pdf Info")
   print("\033[35m  [\033[33m*\033[35m]\033[1;32m 11.Image To Pdf")
-  print("\033[35m  [\033[33m*\033[35m]\033[31m 12.Exit\n")
+  print("\033[35m  [\033[33m*\033[35m]\033[1;32m 12.Pdf To Image")
+  print("\033[35m  [\033[33m*\033[35m]\033[1;32m 13.Pdf To Docx")
+  print("\033[35m  [\033[33m*\033[35m]\033[31m 14.Exit\n")
   choice=input("\033[37m  [\033[31m+\033[37m] Enter Choice : ")
   if choice == "1" or choice == "01":
     banner("""           PDF 2 TXT""")
@@ -455,6 +496,16 @@ def menu():
     img2pdf()
     back()
   elif choice == "12":
+    banner("""    PDF2IMG""")
+    author()
+    pdf2img()
+    back()
+  elif choice == "13":
+    banner("""    PDF2DOCX""")
+    author()
+    pdf2docx()
+    back()
+  elif choice == "14":
     time.sleep(1)
     print("\n")
     print("\033[37m  [\033[31m+\033[37m] THANK YOY ! \033[37m [\033[31m+\033[37m]\n")
